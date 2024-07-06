@@ -1,0 +1,118 @@
+.hotel-king-plaza {
+  font-family: 'Arial, sans-serif';
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
+
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header-carousel .carousel-item {
+  height: 400px;
+}
+
+.header-carousel .header-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  animation: slideIn 1s ease-in-out;
+}
+
+.content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about, .services, .tariff, .gallery, .location, .contact {
+  margin: 20px 0;
+}
+
+.about h2, .services h2, .tariff h2, .gallery h2, .location h2, .contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.services-list, .tariff-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.services-list li, .tariff-list li {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.services-list li:hover, .tariff-list li:hover {
+  transform: scale(1.05);
+}
+
+.services-list li svg {
+  margin-right: 10px;
+  color: #4CAF50;
+}
+
+.gallery-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bold-heading {
+  font-weight: bold;
+}
+
+.gallery-images img {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.05);
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.location-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  margin-top: 10px;
+}

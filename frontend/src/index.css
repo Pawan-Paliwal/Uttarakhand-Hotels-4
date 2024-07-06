@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .active {
+    @apply text-primary;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gg {
+    margin-top: 15vw;
+  }
+}
