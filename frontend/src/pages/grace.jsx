@@ -20,6 +20,7 @@ import q3 from "../assets/q3.jpg";
 import q4 from "../assets/q4.jpg";
 import q5 from "../assets/q5.jpg";
 
+
 const HotelLeGrace = () => {
   const [show, setShow] = useState(false);
   const [modalImage, setModalImage] = useState("");
@@ -63,14 +64,14 @@ const HotelLeGrace = () => {
         <Carousel className="header-carousel">
           <Carousel.Item>
             <img
-              className="d-block w-100 header-image"
+              className="d-block w-80 header-image"
               src={q1}
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100 header-image"
+              className="d-block w-80 header-image"
               src={q2}
               alt="Second slide"
             />
@@ -80,101 +81,134 @@ const HotelLeGrace = () => {
       </header>
 
       <section className="content mb-5">
-        <section className="about text-center">
-          <h2 className="bold-heading">About Hotel Le Grace</h2>
-          <p>
-            Welcome to Hotel Le Grace, a prestigious establishment nestled in
-            the heart of Haridwar, offering a blend of elegance and tranquility.
-            Whether you're visiting for spiritual rejuvenation or exploring the
-            cultural heritage of Haridwar, Hotel Le Grace promises a serene
-            retreat.
-          </p>
-          <p>
-            Our rooms are designed to provide utmost comfort and luxury,
-            equipped with modern amenities including high-speed WiFi, air
-            conditioning, and round-the-clock hot and cold water. Our dedicated
-            staff is committed to ensuring a memorable stay with personalized
-            service.
-          </p>
-          <p>
-            Hotel Le Grace boasts a range of services and facilities to enhance
-            your stay, including complimentary WiFi, secure parking, a gym, a
-            multi-cuisine restaurant, and a cozy lounge area.
-          </p>
-          <p>
-            Conveniently located, Hotel Le Grace offers easy access to
-            Haridwar's major attractions. Experience the spiritual fervor of the
-            Ganga Aarti at Har Ki Pauri, visit the historic Chandi Devi and
-            Mansa Devi temples, or explore the wildlife at Rajaji National Park.
-          </p>
-          <p>
-            Embrace traditional hospitality combined with contemporary comforts
-            at Hotel Le Grace, where every moment is crafted to exceed your
-            expectations.
-          </p>
-        </section>
+        <div className="flex flex-wrap justify-between">
+          {/* Services and Amenities Section */}
+          <section className="services w-full lg:w-1/2 pr-4">
+            <h2 className="bold-heading">Services and Amenities</h2>
+            <ul className="services-list grid grid-cols-2 gap-4 md:grid-cols-3">
+              <li className="flex items-center mb-2">
+                <FaParking className="mr-2" /> Parking
+              </li>
+              <li className="flex items-center mb-2">
+                <FaSnowflake className="mr-2" /> Air Conditioning
+              </li>
+              <li className="flex items-center mb-2">
+                <FaShower className="mr-2" /> 24/7 Hot & Cold Water
+              </li>
+              <li className="flex items-center mb-2">
+                <FaUserMd className="mr-2" /> Doctor On Call
+              </li>
+              <li className="flex items-center mb-2">
+                <FaTv className="mr-2" /> Cable TV
+              </li>
+              <li className="flex items-center mb-2">
+                <FaBed className="mr-2" /> Comfortable Bedrooms
+              </li>
+              <li className="flex items-center">
+                <FaTaxi className="mr-2" /> Taxi Services
+              </li>
+            </ul>
+          </section>
 
-        <section className="services">
-          <h2 className="bold-heading">Services and Amenities</h2>
-          <ul className="services-list">
-            <li>
-              <FaWifi /> WiFi Connectivity
+          {/* About Hotel Le Grace Section */}
+          <section className="about w-full lg:w-1/2 pl-4">
+            <h2 className="bold-heading">About Hotel Le Grace</h2>
+            <p>
+              Welcome to Hotel Le Grace, a prestigious establishment nestled in
+              the heart of Haridwar, offering a blend of elegance and
+              tranquility. Whether you're visiting for spiritual rejuvenation or
+              exploring the cultural heritage of Haridwar, Hotel Le Grace
+              promises a serene retreat.
+            </p>
+            <p>
+              Our rooms are designed to provide utmost comfort and luxury,
+              equipped with modern amenities including high-speed WiFi, air
+              conditioning, and round-the-clock hot and cold water. Our
+              dedicated staff is committed to ensuring a memorable stay with
+              personalized service.
+            </p>
+            <p>
+              Hotel Le Grace boasts a range of services and facilities to
+              enhance your stay, including complimentary WiFi, secure parking, a
+              gym, a multi-cuisine restaurant, and a cozy lounge area.
+            </p>
+            <p>
+              Conveniently located, Hotel Le Grace offers easy access to
+              Haridwar's major attractions. Experience the spiritual fervor of
+              the Ganga Aarti at Har Ki Pauri, visit the historic Chandi Devi
+              and Mansa Devi temples, or explore the wildlife at Rajaji National
+              Park.
+            </p>
+            <p>
+              Embrace traditional hospitality combined with contemporary
+              comforts at Hotel Le Grace, where every moment is crafted to
+              exceed your expectations.
+            </p>
+          </section>
+        </div>
+
+        <section className="tariff my-5">
+          <h2 className="bold-heading text-2xl font-bold mb-4">
+            Room Fare Details
+          </h2>
+          <ul className="tariff-list space-y-4">
+            <li className="flex items-center">
+              <img
+                src={q3}
+                alt="Hotel View 1"
+                className="m-2 w-24 h-24 object-cover cursor-pointer"
+                onClick={() => handleOpenModal(q3)}
+              />
+              <span className="ml-4 text-lg">Deluxe Room - Rs 7000+Taxes</span>
             </li>
-            <li>
-              <FaParking /> Parking
+            <li className="flex items-center">
+              <img
+                src={q4}
+                alt="Hotel View 2"
+                className="m-2 w-24 h-24 object-cover cursor-pointer"
+                onClick={() => handleOpenModal(q4)}
+              />
+              <span className="ml-4 text-lg">
+                Super Deluxe Room - Rs 7500+Taxes
+              </span>
             </li>
-            <li>
-              <FaSnowflake /> Air Conditioning
-            </li>
-            <li>
-              <FaShower /> 24/7 Hot & Cold Water
-            </li>
-            <li>
-              <FaUserMd /> Doctor On Call
-            </li>
-            <li>
-              <FaTv /> Cable TV
-            </li>
-            <li>
-              <FaBed /> Comfortable Bedrooms
-            </li>
-            <li>
-              <FaTaxi /> Taxi Services
+            <li className="flex items-center">
+              <img
+                src={q5}
+                alt="Hotel View 3"
+                className="m-2 w-24 h-24 object-cover cursor-pointer"
+                onClick={() => handleOpenModal(q5)}
+              />
+              <span className="ml-4 text-lg">Family Room - Rs 8500+Taxes</span>
             </li>
           </ul>
         </section>
 
-        <section className="tariff">
-          <h2 className="bold-heading">Room Fare Details</h2>
-          <ul className="tariff-list">
-            <li>Deluxe Room - Rs 7000+Taxes</li>
-            <li>Super Deluxe Room - Rs 7500+Taxes</li>
-            <li>Family Room - Rs 8500+Taxes</li>
-          </ul>
-        </section>
-
-        <section className="gallery">
+        <section className="gallery my-5">
           <h2 className="bold-heading">Gallery</h2>
-          <div className="gallery-images">
+          <div className="gallery-images flex flex-wrap justify-center">
             <img
               src={q3}
               alt="Hotel View 1"
+              className="m-2"
               onClick={() => handleOpenModal(q3)}
             />
             <img
               src={q4}
               alt="Hotel View 2"
+              className="m-2"
               onClick={() => handleOpenModal(q4)}
             />
             <img
               src={q5}
               alt="Hotel View 3"
+              className="m-2"
               onClick={() => handleOpenModal(q5)}
             />
           </div>
         </section>
 
-        <section className="location text-center">
+        <section className="location text-center my-5">
           <h2 className="bold-heading">Location</h2>
           <p>
             Hotel Le Grace is located at a prime spot in Haridwar, easily
@@ -196,9 +230,7 @@ const HotelLeGrace = () => {
           ></iframe>
         </section>
 
-        
-        <section className="contact p-8">
-          
+        <section className="contact p-8 my-5">
           <div className="contact-info-container flex flex-col lg:flex-row justify-between items-center lg:space-x-8 mb-8">
             <div className="contact-box flex flex-col items-center p-4 border border-gray-300 rounded w-full lg:w-auto mb-4 lg:mb-0">
               <FaMobileAlt className="contact-icon text-3xl mb-2" />
@@ -219,7 +251,7 @@ const HotelLeGrace = () => {
             <div className="contact-box flex flex-col items-center p-4 border border-gray-300 rounded w-full lg:w-auto">
               <FaAddressCard className="contact-icon text-3xl mb-2" />
               <p className="text-center">
-                Address:Devpura, Haridwar, Uttarakhand 249401
+                Address: Devpura, Haridwar, Uttarakhand 249401
               </p>
             </div>
           </div>
@@ -258,13 +290,14 @@ const HotelLeGrace = () => {
                   onChange={handleInputChange}
                   required
                   className="w-full p-2 border border-gray-300 rounded"
-                ></textarea>
+                  rows="5"
+                />
               </div>
               <button
                 type="submit"
-                className="btn-submit p-2 bg-blue-500 text-white rounded"
+                className="w-full bg-blue-500 text-white p-2 rounded"
               >
-                Send
+                Send Message
               </button>
             </form>
           </div>

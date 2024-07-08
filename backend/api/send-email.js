@@ -1,23 +1,13 @@
-const express = require("express");
 const nodemailer = require("nodemailer");
-const bodyParser = require("body-parser");
 const cors = require("cors");
-const path = require('path');
-require('dotenv').config(); // Load environment variables from .env file
+const express = require("express");
+const serverless = require("serverless-http");
+require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 5000; // Use environment variable for port or default to 5000
 
-// Serve static files from the frontend/dist directory
-app.use(express.static(path.join(__dirname, 'frontend/dist')));
-
-// Handle other routes and serve index.html for SPA
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/dist/index.html'));
-});
-
-app.use(cors()); // Enable CORS for all origins
-app.use(bodyParser.json()); // Parse JSON bodies
+app.use(cors());
+app.use(express.json());
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -28,7 +18,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.post("/send-email", (req, res) => {
+app.post("/api/send-email", (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -52,6 +42,5 @@ app.post("/send-email", (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+module.exports = app;
+module.exports.handler = serverless(app);

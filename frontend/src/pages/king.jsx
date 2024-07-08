@@ -81,76 +81,97 @@ const HotelKingPlaza = () => {
       </header>
 
       <section className="content mb-5">
-        <section className="about text-center text-bold">
-          <h2 className="bold-heading">About Hotel King Plaza</h2>
-          <p>
-            Welcome to Hotel King Plaza, a luxurious retreat located in the
-            heart of Haridwar. Nestled amidst serene surroundings, our hotel
-            offers unparalleled comfort and convenience, making it an ideal
-            choice for both leisure and business travelers.
-          </p>
-          <p>
-            Experience the epitome of hospitality with our well-appointed rooms
-            equipped with modern amenities, including high-speed WiFi, air
-            conditioning, and 24/7 hot and cold water. Our dedicated staff
-            ensures that every guest enjoys a memorable stay with personalized
-            services.
-          </p>
-          <p>
-            Indulge in a range of services and facilities designed to enhance
-            your experience. From complimentary WiFi and secure parking to a
-            fitness center and a multi-cuisine restaurant, we cater to your
-            every need. Whether you're here for spiritual rejuvenation or
-            exploring Haridwar's cultural heritage, Hotel King Plaza promises a
-            relaxing and enjoyable stay.
-          </p>
-          <p>
-            Conveniently located near Haridwar's major attractions, including
-            the sacred Ganga Aarti at Har Ki Pauri and the historic Chandi Devi
-            and Mansa Devi temples, Hotel King Plaza offers easy access to all
-            the city has to offer.
-          </p>
-          <p>
-            Embrace luxury and comfort at Hotel King Plaza, where hospitality
-            meets elegance to create unforgettable memories.
-          </p>
-        </section>
+        <div className="flex flex-wrap justify-between">
+          {/* Services and Amenities Section */}
+          <section className="services w-full lg:w-1/2 pr-4">
+            <h2 className="bold-heading">Services and Amenities</h2>
+            <ul className="services-list grid grid-cols-2 gap-4 md:grid-cols-3">
+              <li className="flex items-center mb-2">
+                <FaParking className="mr-2" /> Parking
+              </li>
+              <li className="flex items-center mb-2">
+                <FaSnowflake className="mr-2" /> Air Conditioning
+              </li>
+              <li className="flex items-center mb-2">
+                <FaShower className="mr-2" /> 24/7 Hot & Cold Water
+              </li>
+              <li className="flex items-center mb-2">
+                <FaUserMd className="mr-2" /> Doctor On Call
+              </li>
+              <li className="flex items-center mb-2">
+                <FaTv className="mr-2" /> Cable TV
+              </li>
+              <li className="flex items-center mb-2">
+                <FaBed className="mr-2" /> Comfortable Bedrooms
+              </li>
+              <li className="flex items-center">
+                <FaTaxi className="mr-2" /> Taxi Services
+              </li>
+            </ul>
+          </section>
 
-        <section className="services">
-          <h2 className="bold-heading">Services and Amenities</h2>
-          <ul className="services-list">
-            <li>
-              <FaWifi /> WiFi Connectivity
-            </li>
-            <li>
-              <FaParking /> Parking
-            </li>
-            <li>
-              <FaSnowflake /> Air Conditioning
-            </li>
-            <li>
-              <FaShower /> 24/7 Hot & Cold Water
-            </li>
-            <li>
-              <FaUserMd /> Doctor On Call
-            </li>
-            <li>
-              <FaTv /> Cable TV
-            </li>
-            <li>
-              <FaBed /> Comfortable Bedrooms
-            </li>
-            <li>
-              <FaTaxi /> Taxi Services
-            </li>
-          </ul>
-        </section>
+          {/* About Hotel Le Grace Section */}
+          <section className="about w-full lg:w-1/2 pl-4">
+            <h2 className="bold-heading">About Hotel King</h2>
+            <p>
+              Welcome to Hotel King Plaza, a luxurious retreat located in the
+              heart of Haridwar. Nestled amidst serene surroundings, our hotel
+              offers unparalleled comfort and convenience, making it an ideal
+              choice for both leisure and business travelers.
+            </p>
+            <p>
+              Experience the epitome of hospitality with our well-appointed
+              rooms equipped with modern amenities, including high-speed WiFi,
+              air conditioning, and 24/7 hot and cold water. Our dedicated staff
+              ensures that every guest enjoys a memorable stay with personalized
+              services.
+            </p>
+            <p>
+              Indulge in a range of services and facilities designed to enhance
+              your experience. From complimentary WiFi and secure parking to a
+              fitness center and a multi-cuisine restaurant, we cater to your
+              every need. Whether you're here for spiritual rejuvenation or
+              exploring Haridwar's cultural heritage, Hotel King Plaza promises
+              a relaxing and enjoyable stay.
+            </p>
+            <p>
+              Conveniently located near Haridwar's major attractions, including
+              the sacred Ganga Aarti at Har Ki Pauri and the historic Chandi
+              Devi and Mansa Devi temples, Hotel King Plaza offers easy access
+              to all the city has to offer.
+            </p>
+            <p>
+              Embrace luxury and comfort at Hotel King Plaza, where hospitality
+              meets elegance to create unforgettable memories.
+            </p>
+          </section>
+        </div>
 
-        <section className="tariff">
-          <h2 className="bold-heading">Room Fare Details</h2>
-          <ul className="tariff-list">
-            <li>Deluxe Room - Rs 2810+Taxes</li>
-            <li>AC Deluxe Room - Rs 4109+Taxes</li>
+        <section className="tariff my-5">
+          <h2 className="bold-heading text-2xl font-bold mb-4">
+            Room Fare Details
+          </h2>
+          <ul className="tariff-list space-y-4">
+            <li className="flex items-center">
+              <img
+                src={k3}
+                alt="Hotel View 1"
+                className="m-2 w-24 h-24 object-cover cursor-pointer"
+                onClick={() => handleOpenModal(q3)}
+              />
+              <span className="ml-4 text-lg">Deluxe Room - Rs 2810+Taxes</span>
+            </li>
+            <li className="flex items-center">
+              <img
+                src={k4}
+                alt="Hotel View 1"
+                className="m-2 w-24 h-24 object-cover cursor-pointer"
+                onClick={() => handleOpenModal(q3)}
+              />
+              <span className="ml-4 text-lg">
+                AC Deluxe Room - Rs 4109+Taxes
+              </span>
+            </li>
           </ul>
         </section>
 
